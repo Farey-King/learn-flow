@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LucideUserSquare2, User, User2, UserPlus, Users2Icon, UserSquare, UsersRound } from 'lucide-react';
+import {  User2, } from 'lucide-react';
 import illustrator from '../../assets/img1.png'
 import Button from '../ui/Button';
 
