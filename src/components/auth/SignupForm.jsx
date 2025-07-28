@@ -2,8 +2,15 @@ import React from 'react';
 import illustrator from '../../assets/img1.png';
 import Input from '../ui/Input';
 import Button from '../ui/Button';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignupForm() {
+
+     const navigate = useNavigate('');
+
+    const handleNavigate = () => {
+        navigate('/dashboard');
+    }
     return (
         <div className='px-4 px-[8%] py-[3%] mt-20 grid md:grid-cols-2 gap-x-6 gap-y-20 text-[#000000]'>
             {/* Left side */}
@@ -46,7 +53,7 @@ export default function SignupForm() {
 
                 {/* Submit Button */}
                 <div className="mt-6">
-                    <Button label='Create Account' />
+                    <Button label='Create Account' onClick={handleNavigate}/>
                 </div>
 
                 {/* Sign In Link */}
