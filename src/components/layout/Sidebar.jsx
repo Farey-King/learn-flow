@@ -13,6 +13,7 @@ import {
     Menu,
     X
 } from 'lucide-react';
+import logo from '../../assets/logo.png';
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -104,8 +105,8 @@ const Sidebar = () => {
                 <div className="px-6 py-4 border-b">
                     <div className="w-[70px] mb-2">
                         {/* Using placeholder div since we don't have the actual logo */}
-                        <div className="w-full h-8 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-500">
-                            Logo
+                        <div className="w-full h-5 mb-6 mt-2 rounded flex items-center justify-center">
+                            <img src={logo} alt="Learn flow logo" />
                         </div>
                     </div>
                     <div className="mt-2">
