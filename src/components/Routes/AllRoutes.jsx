@@ -1,20 +1,24 @@
 // src/components/Routes/AllRoutes.jsx
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home';
 import SignUp from '../auth/SignUp';
 import SignupForm from '../auth/SignupForm';
 import Login from '../auth/Login';
 import LoginForm from '../auth/LoginForm';
+import Navbar from '../layout/Navbar';
 
 export default function AllRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path='/sign-up' element={<SignupForm />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/sign-in' element={<LoginForm />} />
-    </Routes>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path='/sign-up' element={<SignupForm />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/sign-in' element={<LoginForm />} />
+      </Routes>
+    </>
   );
 }
