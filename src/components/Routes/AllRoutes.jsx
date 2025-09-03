@@ -1,6 +1,6 @@
 // src/components/Routes/AllRoutes.jsx
 import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import SignUp from '../auth/SignUp';
 import SignupForm from '../auth/SignupForm';
