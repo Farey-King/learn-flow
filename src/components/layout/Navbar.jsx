@@ -120,7 +120,7 @@ const Navbar = () => {
 
                             <li className="">
                                 <NavLink
-                                    to="/signin"
+                                    to="/login"
                                     className={({ isActive }) =>
                                         `group relative text-[var(--primary-color)] border border-[var(--primary-color)] rounded inline-block py-1 md:px-6 px-5 hover:shadow-lg hover:shadow-gray-400 ${
                                             isActive ? 'text-purple-700' : ''
