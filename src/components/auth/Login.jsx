@@ -10,7 +10,11 @@ export default function Login() {
     const navigate = useNavigate('');
 
     const handleNavigate = () => {
-        navigate('/sign-in');
+        if (selectedRole === 'teacher') {
+            navigate('/educator/sign-in');
+        } else {
+            navigate('/sign-in');
+        }
     }
 
     const handleRoleSelect = (role) => {
