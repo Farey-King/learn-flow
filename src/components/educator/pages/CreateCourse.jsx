@@ -34,7 +34,7 @@ function StepTracker({ currentStep, modules }) {
             </div>
 
             {/* STEP 2 */}
-            <div className="flex gap-4">
+            <div className="flex gap-10">
                 <div className="flex flex-col items-center">
                     <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
                         currentStep === 2 ? 'border-white bg-transparent' : 'border-gray-500 bg-transparent'
@@ -53,7 +53,7 @@ function StepTracker({ currentStep, modules }) {
 
             {/* Uploaded modules */}
             {modules.map((mod, i) => (
-                <div key={i} className="flex gap-4">
+                <div key={i} className="flex gap-10">
                     <div className="flex flex-col items-center">
                         <div className="w-8 h-8 rounded-full border-2 border-[#69315E] bg-[#69315E] flex items-center justify-center flex-shrink-0">
                             <CheckCircle size={14} className="text-white" />
@@ -143,7 +143,7 @@ export default function CreateCourse() {
 
                     {/* STEP 1a — Basic Info */}
                     {step === '1a' && (
-                        <div className="space-y-4">
+                        <div className="space-y-10">
                             <FormField label="Title *">
                                 <input
                                     name="title" value={courseData.title} onChange={handleCourseChange}
@@ -217,7 +217,7 @@ export default function CreateCourse() {
 
                     {/* STEP 1b — Other Details */}
                     {step === '1b' && (
-                        <div className="space-y-4">
+                        <div className="space-y-10">
                             <FormField label="Course Requirement *">
                                 <input
                                     name="requirement" value={courseData.requirement} onChange={handleCourseChange}
@@ -265,7 +265,7 @@ export default function CreateCourse() {
 
                     {/* STEP 2 — Module Upload */}
                     {step === '2' && (
-                        <div className="space-y-4">
+                        <div className="space-y-10">
                             <FormField label="Topic *">
                                 <input
                                     name="topic" value={moduleData.topic} onChange={handleModuleChange}

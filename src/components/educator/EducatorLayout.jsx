@@ -28,7 +28,7 @@ const PAGE_TITLES = {
     '/educator/dashboard/students': 'Students',
     '/educator/dashboard/courses': 'Courses Page',
     '/educator/dashboard/courses/create': 'Create Course',
-    '/educator/dashboard/chats': 'Chats',
+    '/educator/dashboard/chats': 'Messages',
     '/educator/dashboard/settings': 'Settings',
     '/educator/dashboard/staff-room': 'Staff Room',
     '/educator/dashboard/profile': 'Profile',
