@@ -10,6 +10,9 @@ import CreateCourse from '../educator/pages/CreateCourse';
 import CreateLiveLesson from '../educator/pages/CreateLiveLesson';
 import CourseManage from '../educator/pages/CourseManage';
 import CourseModules from '../educator/pages/CourseModules';
+import CreateQuiz from '../educator/pages/CreateQuiz';
+import CreateQuizQuestion from '../educator/pages/CreateQuizQuestion';
+import QuizSuccess from '../educator/pages/QuizSuccess';
 import EducatorProfile from '../educator/pages/EducatorProfile';
 import Students from '../educator/pages/Students';
 import InstructorMessages from '../educator/pages/InstructorMessages';
@@ -35,6 +38,11 @@ export default function EducatorRoutes() {
             <Route path='/dashboard/courses/create' element={<CourseTypeSelection />} />
             <Route path='/dashboard/courses/create/video' element={<CreateCourse />} />
             <Route path='/dashboard/courses/create/live' element={<CreateLiveLesson />} />
+
+            {/* Quiz creation flow — standalone (no sidebar layout) */}
+            <Route path='/dashboard/courses/:id/quiz/create' element={<CreateQuiz />} />
+            <Route path='/dashboard/courses/:id/quiz/questions' element={<CreateQuizQuestion />} />
+            <Route path='/dashboard/courses/:id/quiz/success' element={<QuizSuccess />} />
 
             {/* Dashboard pages with shared sidebar layout */}
             <Route path='/dashboard' element={<EducatorLayout />}>
