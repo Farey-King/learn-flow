@@ -1,46 +1,46 @@
-import React from 'react';
 import illustrator from '../../assets/Illustration2.png';
-import Button from '../ui/Button';
-import { useNavigate } from 'react-router-dom';
+import logo from '../../assets/logo.png';
 import Input from '../ui/Input';
-
+import Button from '../ui/Button';
+import { ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginForm() {
-    const navigate = useNavigate('');
-
-    const handleNavigate = () => {
-        navigate('/dashboard');
-    }
+    const navigate = useNavigate();
 
     return (
-        <div className="overflow-x-hidden">
-            <div className='mt-19 grid md:grid-cols-2 gap-x-6 gap-y-20 text-[#000000]'>
-                {/* left side */}
-                <div className='flex h-full flex-col gap-6 px-[8%] bg-gray-900 justify-center'>
-                    <img src={illustrator} alt="Our core learning Values" className='w-full max-w-[70%] m-auto' />
-
-                    <div className='rounded-xl shadow-lg text-white py-4 px-10 flex gap-6 flex-col text-[.8rem] font-[500] bg-gradient-to-b from-[#8B4513] to-black'>
-                        <div>
-                            <button className='bg-black py-2 px-8 rounded-lg block font-[400]'>An Avenue to Learn</button>
-                        </div>
-
-                        <p className='leading-[2]'>Today, we create innovative solutions to the challenges that consumers face in both their everyday lives and events.</p>
+        <div className="min-h-screen grid md:grid-cols-2 text-[#000000]">
+            {/* Left side — form */}
+            <div className="flex flex-col bg-gray-50 px-[8%] py-8">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-12">
+                    <div className="flex items-center gap-4">
+                        <button
+                            onClick={() => navigate(-1)}
+                            className="flex items-center justify-center w-9 h-9 rounded-full border border-gray-300 hover:bg-gray-100 transition"
+                        >
+                            <ArrowLeft size={18} />
+                        </button>
+                        <img src={logo} alt="LearnFlow" className="w-[55px] cursor-pointer" onClick={() => navigate('/')} />
                     </div>
+                    <p className="text-sm text-gray-600">
+                        Don't have an account?{' '}
+                        <span className="text-blue-600 cursor-pointer font-medium" onClick={() => navigate('/signup')}>Sign up!</span>
+                    </p>
                 </div>
 
-                {/* right side */}
-                <div className="flex flex-col px-[8%] py-[3%] justify-center px-4 md:px-20 text-center">
-                    <h2 className='text-[1.6rem] font-[600] mb-2'>Welcome Back</h2>
-                    <p className='text-[#7E7E7E] text-[.8rem] mb-8'>Login into your Account</p>
+                {/* Form content */}
+                <div className="flex flex-col justify-center flex-1 max-w-[420px] w-full mx-auto">
+                    <h2 className="text-[2rem] font-bold mb-1">Welcome Back</h2>
+                    <p className="text-gray-500 text-sm mb-8">Login into your account</p>
 
                     {/* Social Auth Buttons */}
-                    <div className="flex gap-4 justify-center mb-4">
-                        <button className="flex items-center justify-center gap-2 border px-4 py-2 rounded-md shadow-sm w-full bg-white">
+                    <div className="flex gap-4 mb-4">
+                        <button className="flex items-center justify-center gap-2 border px-4 py-2.5 rounded-md shadow-sm w-full bg-white">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" className="w-5 h-5" />
                             <span className="text-sm">Google</span>
                         </button>
-
-                        <button className="flex items-center justify-center gap-2 border px-4 py-2 rounded-md shadow-sm w-full bg-white">
+                        <button className="flex items-center justify-center gap-2 border px-4 py-2.5 rounded-md shadow-sm w-full bg-white">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" className="w-5 h-5" />
                             <span className="text-sm">Facebook</span>
                         </button>
@@ -49,26 +49,36 @@ export default function LoginForm() {
                     {/* Divider */}
                     <div className="flex items-center gap-2 mb-6">
                         <hr className="flex-grow border-t border-gray-300" />
-                        <span className="text-sm text-gray-500">Or continue with</span>
+                        <span className="text-sm text-gray-400">Or continue with</span>
                         <hr className="flex-grow border-t border-gray-300" />
                     </div>
 
-                    {/* Input Fields */}
-                    <div className='flex flex-col gap-4 px-10 text-left'>
-                        <Input placeholder='Enter Email' />
-                        <Input placeholder='Password' type='password' />
+                    {/* Inputs */}
+                    <div className="flex flex-col gap-4">
+                        <Input placeholder="Email" />
+                        <Input placeholder="Password" type="password" />
                     </div>
 
-                    {/* Submit Button */}
-                    <div className="mt-6 px-10">
-                        <Button label='Create Account' onClick={handleNavigate}/>
+                    {/* Remember me + Recover */}
+                    <div className="flex items-center justify-between mt-3 mb-6 text-sm">
+                        <label className="flex items-center gap-2 text-gray-600 cursor-pointer">
+                            <input type="checkbox" className="accent-[#69315E]" />
+                            Remember me
+                        </label>
+                        <span className="text-[#69315E] cursor-pointer font-medium">Recover Password</span>
                     </div>
+
+                    <Button label="Log In" onClick={() => navigate('/dashboard')} />
                 </div>
+            </div>
 
-                {/* Sign In Link */}
-                <p className="text-[.8rem] mt-4 text-gray-600">
-                    Don't have an account? <span className='text-blue-600'>Sign-up! </span>
-                </p>
+            {/* Right side — dark illustration */}
+            <div className="hidden md:flex flex-col gap-6 px-[8%] bg-gray-900 justify-center py-12">
+                <img src={illustrator} alt="Welcome back" className="w-full max-w-[70%] m-auto" />
+                <div className="rounded-xl shadow-lg text-white py-4 px-10 flex gap-6 flex-col text-[.8rem] font-[500] bg-gradient-to-r from-[#8B4513] to-black">
+                    <button className="bg-black py-2 px-8 rounded-lg self-start font-[400]">An Avenue To Learn</button>
+                    <p className="leading-[2]">Today, we create innovative solutions to the challenges that consumers face in both their everyday lives and events.</p>
+                </div>
             </div>
         </div>
     );
