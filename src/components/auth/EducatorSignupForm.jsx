@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import illustrator from '../../assets/img1.png';
+import illustrator from '../../assets/illustration.svg';
 import Input from '../ui/Input';
 import Button from '../ui/Button';
 import { useNavigate } from 'react-router-dom';

@@ -17,6 +17,8 @@ import EducatorProfile from '../educator/pages/EducatorProfile';
 import Students from '../educator/pages/Students';
 import InstructorMessages from '../educator/pages/InstructorMessages';
 import EducatorSettings from '../educator/pages/EducatorSettings';
+import Tools from '../educator/pages/Tools';
+import SalesHistory from '../educator/pages/SalesHistory';
 
 // Simple placeholder for pages not yet designed
 function ComingSoon({ title }) {
@@ -55,6 +57,8 @@ export default function EducatorRoutes() {
                 <Route path='chats' element={<InstructorMessages />} />
                 <Route path='settings' element={<EducatorSettings />} />
                 <Route path='staff-room' element={<ComingSoon title="Staff Room" />} />
+                <Route path='tools' element={<Tools />} />
+                <Route path='sales' element={<SalesHistory />} />
             </Route>
         </Routes>
     );

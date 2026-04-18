@@ -332,9 +332,11 @@ export default function CreateCourse() {
                 </div>
             </div>
 
-            {/* Right: Dark panel with step tracker */}
-            <div className="w-72 bg-[#2d2d3a] flex-shrink-0 hidden md:block">
-                <StepTracker currentStep={currentStepNum} modules={modules} />
+            {/* Right: Dark panel with step tracker + frame decorations */}
+            <div className="w-72 bg-[#2d2d3a] flex-shrink-0 hidden md:block relative overflow-hidden">
+                <div className="relative z-10">
+                    <StepTracker currentStep={currentStepNum} modules={modules} />
+                </div>
             </div>
         </div>
     );

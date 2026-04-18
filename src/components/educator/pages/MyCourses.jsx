@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Edit2, Trash2, Plus, BookOpen, Send } from 'lucide-react';
-import img1 from '../../../assets/img1.png';
-import img2 from '../../../assets/img2.png';
+import rect1 from '../../../assets/Rectangle 370 (1).svg';
+import rect2 from '../../../assets/Rectangle 370 (2).svg';
+import rect3 from '../../../assets/Rectangle 370 (3).svg';
 
 const initialCourses = [
     {
@@ -11,7 +12,7 @@ const initialCourses = [
         level: 'Beginner',
         progress: 45,
         status: 'ongoing',
-        image: null,
+        image: rect3,
     },
     {
         id: 2,
@@ -19,7 +20,7 @@ const initialCourses = [
         level: 'Beginner',
         progress: 100,
         status: 'completed',
-        image: img1,
+        image: rect1,
     },
     {
         id: 3,
@@ -27,7 +28,7 @@ const initialCourses = [
         level: 'Beginner',
         progress: 100,
         status: 'completed',
-        image: img2,
+        image: rect2,
     },
 ];
 

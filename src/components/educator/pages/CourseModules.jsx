@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Edit2, Trash2, Plus, ChevronLeft } from 'lucide-react';
-import img1 from '../../../assets/img1.png';
+import courseContainer from '../../../assets/Container (1).svg';
 
 const initialModules = [
     { id: 1, title: 'Auto Layouts and Components in Figma' },
@@ -15,7 +15,7 @@ export default function CourseModules() {
     const { id } = useParams();
     const navigate = useNavigate();
     const [modules, setModules] = useState(initialModules);
-    const [coverImage, setCoverImage] = useState(img1);
+    const [coverImage, setCoverImage] = useState(courseContainer);
     const [enrollmentEnabled, setEnrollmentEnabled] = useState(false);
 
     const isComplete = !!coverImage;

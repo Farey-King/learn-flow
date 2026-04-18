@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const TABS = ['Account settings', 'Notification settings', 'Payment settings'];
 
@@ -7,6 +8,7 @@ const btnPurple = 'bg-[#69315E] text-white text-sm font-medium rounded-lg px-6 p
 
 /* ─── Account Settings Tab ─── */
 function AccountSettings() {
+    const navigate = useNavigate();
     const [form, setForm] = useState({
         fullName: 'Gabrielle Torrez',
         email: 'Gabrielletorrez@gmail.com',
@@ -43,7 +45,7 @@ function AccountSettings() {
                         <input value={form.country} onChange={set('country')} className={inputCls} />
                     </div>
                 </div>
-                <button className={btnPurple}>Save</button>
+                <button className={btnPurple} onClick={() => navigate('/educator/dashboard/profile')}>Save</button>
             </div>
 
             {/* Password */}
