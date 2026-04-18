@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
-import img1 from '../../../assets/img1.png';
+import rect1 from '../../../assets/Rectangle 370 (1).svg';
+import rect2 from '../../../assets/Rectangle 370 (2).svg';
 
 const mockCourses = {
     1: {
         title: 'UI/UX Design Essentials',
         description: 'This course provides a comprehensive introduction to data analysis techniques, tools, and methodologies. Through a combination of theoretical concepts and hands-on practical exercises, participants will develop a solid foundation in data analysis and gain the skills necessary to extract valuable insights from various datasets.',
-        image: img1,
+        image: rect1,
         enrollmentEnabled: true,
     },
     2: {
         title: 'Data Analysis Fundamentals',
         description: 'Learn data analysis techniques, tools, and methodologies. Through a combination of theoretical concepts and hands-on practical exercises, participants will develop a solid foundation in data analysis.',
-        image: null,
+        image: rect2,
         enrollmentEnabled: false,
     },
 };

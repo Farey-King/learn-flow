@@ -10,17 +10,21 @@ import {
     Users,
     LogOut,
     Search,
+    UserCircle,
 } from 'lucide-react';
 import logo from '../../assets/logo.png';
 
 const NAV_ITEMS = [
     { label: 'Home', icon: LayoutDashboard, to: '/educator/dashboard', end: true },
+    { label: 'Profile', icon: UserCircle, to: '/educator/dashboard/profile' },
     { label: 'Students', icon: GraduationCap, to: '/educator/dashboard/students' },
     { label: 'Create Course', icon: PlusSquare, to: '/educator/dashboard/courses/create' },
     { label: 'Chats', icon: MessageCircle, to: '/educator/dashboard/chats' },
     { label: 'Courses Page', icon: BookOpen, to: '/educator/dashboard/courses' },
     { label: 'Settings', icon: Settings, to: '/educator/dashboard/settings' },
     { label: 'Staff Room', icon: Users, to: '/educator/dashboard/staff-room', badge: 4 },
+    { label: 'Tools', icon: Settings, to: '/educator/dashboard/tools' },
+    { label: 'Sales History', icon: LayoutDashboard, to: '/educator/dashboard/sales' },
 ];
 
 const PAGE_TITLES = {
@@ -32,6 +36,8 @@ const PAGE_TITLES = {
     '/educator/dashboard/settings': 'Settings',
     '/educator/dashboard/staff-room': 'Staff Room',
     '/educator/dashboard/profile': 'Profile',
+    '/educator/dashboard/tools': 'Tools',
+    '/educator/dashboard/sales': 'Sales History',
 };
 
 export default function EducatorLayout() {
@@ -104,7 +110,7 @@ export default function EducatorLayout() {
                     <div className="flex items-center gap-2 border border-gray-200 rounded-lg px-3 py-2">
                         <Search size={15} className="text-gray-400" />
                         <input
-                            placeholder="Search..."
+                            placeholder={location.pathname.includes('/courses') ? 'Search Courses...' : 'Search...'}
                             className="text-sm outline-none text-gray-600 w-40 bg-transparent"
                         />
                     </div>

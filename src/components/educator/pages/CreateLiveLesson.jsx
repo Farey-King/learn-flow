@@ -2,86 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import logo from '../../../assets/logo.png';
-
-const DARK   = '#f0f0f0';
-const PURPLE = '#4a1040';
-const BLUE   = '#8395a8';
-const YELLOW = '#c4b35e';
-
-const CELLS = [
-    { bg: YELLOW, shape: 'dome',       fill: PURPLE },
-    { bg: DARK,   shape: 'circle',     fill: PURPLE },
-    { bg: DARK,   shape: 'circle',     fill: PURPLE },
-    { bg: YELLOW, shape: 'dome',       fill: PURPLE },
-
-    { bg: PURPLE, shape: 'bowl',       fill: BLUE   },
-    { bg: BLUE,   shape: null                        },
-    { bg: BLUE,   shape: null                        },
-    { bg: PURPLE, shape: 'bowl',       fill: BLUE   },
-
-    { bg: BLUE,   shape: 'side-right', fill: YELLOW },
-    { bg: YELLOW, shape: 'side-right', fill: BLUE   },
-    { bg: YELLOW, shape: 'side-left',  fill: BLUE   },
-    { bg: BLUE,   shape: 'side-left',  fill: YELLOW },
-
-    { bg: YELLOW, shape: null                        },
-    { bg: DARK,   shape: 'circle',     fill: PURPLE },
-    { bg: DARK,   shape: 'circle',     fill: PURPLE },
-    { bg: YELLOW, shape: null                        },
-
-    { bg: PURPLE, shape: 'dome',       fill: BLUE   },
-    { bg: BLUE,   shape: null                        },
-    { bg: BLUE,   shape: null                        },
-    { bg: PURPLE, shape: 'dome',       fill: BLUE   },
-];
-
-function GeoCell({ bg, shape, fill }) {
-    return (
-        <div style={{ backgroundColor: bg, position: 'relative', overflow: 'hidden' }}>
-            {shape === 'circle' && (
-                <div style={{ position: 'absolute', inset: '10%', borderRadius: '50%', backgroundColor: fill }} />
-            )}
-            {shape === 'dome' && (
-                <div style={{
-                    position: 'absolute', bottom: 0, left: 0, right: 0,
-                    height: '80%', borderRadius: '40% 40% 0 0', backgroundColor: fill,
-                }} />
-            )}
-            {shape === 'bowl' && (
-                <div style={{
-                    position: 'absolute', top: 0, left: 0, right: 0,
-                    height: '80%', borderRadius: '0 0 50% 50%', backgroundColor: fill,
-                }} />
-            )}
-            {shape === 'side-right' && (
-                <div style={{
-                    position: 'absolute', top: 0, bottom: 0, right: 0,
-                    width: '70%', borderRadius: '9999px 0 0 9999px', backgroundColor: fill,
-                }} />
-            )}
-            {shape === 'side-left' && (
-                <div style={{
-                    position: 'absolute', top: 0, bottom: 0, left: 0,
-                    width: '70%', borderRadius: '0 9999px 9999px 0', backgroundColor: fill,
-                }} />
-            )}
-        </div>
-    );
-}
-
-function GeometricPanel() {
-    return (
-        <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gridTemplateRows: 'repeat(5, 20vh)',  /* explicit row height — no parent dependency */
-            width: '100%',
-            gap: 0,
-        }}>
-            {CELLS.map((c, i) => <GeoCell key={i} {...c} />)}
-        </div>
-    );
-}
+import cellLeft from '../../../assets/cell-left.svg';
+import cellRight from '../../../assets/cell-right.svg';
 
 /* ── Form helpers ── */
 const inputCls    = 'w-full border border-white rounded-xl px-4 py-3 text-sm outline-none focus:border-[#69315E] focus:ring-1 focus:ring-[#69315E] transition placeholder:text-gray-400';
@@ -194,9 +116,12 @@ export default function CreateLiveLesson() {
                 </div>
             </div>
 
-            {/* ── Right: Geometric panel ── */}
-            <div style={{ width: '50%', minHeight: '100vh', backgroundColor: DARK, flexShrink: 0, overflow: 'hidden' }}>
-                <GeometricPanel />
+            {/* ── Right: Cell images ── */}
+            <div style={{ width: '50%',minHeight: '100vh', flexShrink: 0, padding: '50px', boxSizing: 'border-box', backgroundColor: '#fff' }}>
+                <div style={{ display: 'flex', height: '100%', overflow: 'hidden' }}>
+                    <img src={cellRight} alt="" style={{ width: '50%', height: '100%', objectFit: 'cover' }} />
+                    <img src={cellLeft} alt="" style={{ width: '50%', height: '100%', objectFit: 'cover' }} />
+                </div>
             </div>
         </div>
     );
