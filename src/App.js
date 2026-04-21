@@ -1,7 +1,6 @@
-import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AllRoutes from './components/Routes/AllRoutes';
-import Dashboard from './components/pages/Dashboard';
+import DashboardRoutes from './components/Routes/DashboardRoutes';
 import EducatorRoutes from './components/Routes/EducatorRoutes';
 
 export default function App() {
@@ -10,7 +9,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/*" element={<AllRoutes />} />
-          <Route path='/dashboard/*' element={<Dashboard />} />
+          <Route path='/dashboard/*' element={<DashboardRoutes />} />
           <Route path='/educator/*' element={<EducatorRoutes />} />
         </Routes>
       </BrowserRouter>
