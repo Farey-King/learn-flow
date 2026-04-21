@@ -5,7 +5,7 @@ import '../../css/style.css';
 
 export default function Home() {
   return (
-    <div className='pt-10'>
+    <div>
       <MiniNavbar />
       <Hero />
     </div>

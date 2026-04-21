@@ -1,164 +1,88 @@
-import React, { useState } from "react";
+import { useState } from 'react';
 import logo from '../../assets/logo.png';
-import { NavLink } from "react-router-dom";
-import { Menu, X } from 'lucide-react'; 
+import { NavLink } from 'react-router-dom';
+import { Menu, X, Search } from 'lucide-react';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
-    const handleLinkClick = () => {
-        if (menuOpen) {
-            toggleMenu();
-        }
-    };
-
     return (
-        <header className="bg-white overflow-x-hidden mb-8">
-            <nav className="flex justify-between bg-white shadow-md items-center py-1 px-[10%] w-full fixed top-0 left-0 z-[9999]">
-                <div className="cursor-pointer hover:scale-[1.1] duration-300 ease-in-out">
-                    <NavLink to="/">
-                        <div className="w-[60px]">
-                            <img src={logo} alt="gvl logo" />
-                        </div>
-                    </NavLink>
-                </div>
+        <header className="h-[72px]">
+            <nav className="flex justify-between bg-white shadow-md items-center h-[72px] px-[5%] w-full fixed top-0 left-0 z-[9999] gap-4">
+                {/* Logo */}
+                <NavLink to="/" className="flex-shrink-0">
+                    <img src={logo} alt="LearnFlow" className="w-[60px]" />
+                </NavLink>
 
-                <div className={`nav-links duration-500 md:static absolute md:min-h-fit min-h-[60vh] left-0 ${menuOpen ? "top-[80%] min-h-[30vh] text-[var(--primary)] backdrop-blur- bg-gray-100 gz-10 py-2" : "top-[-900%]"} md:w-auto w-full flex items-center`}>
-                    <div className="pl-12 flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-6 w-full justify-between">
-                        <ul className="flex md:flex-row flex-col md:pr-16 md:items-center gap-4">
-                            <li>
-                                <NavLink
-                                    to="/"
-                                    className={({ isActive }) =>
-                                        `group relative inline-block py-2 md:px-2 px-5 ${
-                                            isActive ? 'text-[#0d438d]' : 'hover:text-[#0d438d]'
-                                        }`
-                                    }
-                                    onClick={handleLinkClick}
-                                >
-                                    {({ isActive }) => (
-                                        <>
-                                            Home
-                                            <span className={`absolute bottom-0 left-0 h-[3px] bg-[var(--primary-color)] rounded-full transition-all duration-300 ${
-                                                isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                                            }`}></span>
-                                        </>
-                                    )}
-                                </NavLink>
-                            </li>
+                {/* Center — nav links + search (desktop) */}
+                <div className="hidden md:flex items-center gap-6 flex-1">
+                    <ul className="flex items-center gap-6 text-sm font-medium text-gray-700">
+                        <li>
+                            <NavLink to="/" end className={({ isActive }) => `hover:text-[#69315E] transition ${isActive ? 'text-[#69315E] font-semibold' : ''}`}>
+                                Dashboard
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/pricing" className={({ isActive }) => `hover:text-[#69315E] transition ${isActive ? 'text-[#69315E] font-semibold' : ''}`}>
+                                Pricing
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/course" className={({ isActive }) => `hover:text-[#69315E] transition ${isActive ? 'text-[#69315E] font-semibold' : ''}`}>
+                                Courses
+                            </NavLink>
+                        </li>
+                    </ul>
 
-                            <li>
-                                <NavLink
-                                    to="/dashboard"
-                                    className={({ isActive }) =>
-                                        `group relative inline-block py-2 md:px-2 px-5 ${
-                                            isActive ? 'text-[#0d438d]' : 'hover:text-[#0d438d]'
-                                        }`
-                                    }
-                                    onClick={handleLinkClick}
-                                >
-                                    {({ isActive }) => (
-                                        <>
-                                            Dashboard
-                                            <span className={`absolute bottom-0 left-0 h-[3px] bg-[var(--primary-color)] rounded-full transition-all duration-300 ${
-                                                isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                                            }`}></span>
-                                        </>
-                                    )}
-                                </NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink
-                                    to="/pricing"
-                                    className={({ isActive }) =>
-                                        `group relative inline-block py-2 md:px-2 px-5 ${
-                                            isActive ? 'text-[#0d438d]' : 'hover:text-[#0d438d]'
-                                        }`
-                                    }
-                                    onClick={handleLinkClick}
-                                >
-                                    {({ isActive }) => (
-                                        <>
-                                            Pricing
-                                            <span className={`absolute bottom-0 left-0 h-[3px] bg-[var(--primary-color)] rounded-full transition-all duration-300 ${
-                                                isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                                            }`}></span>
-                                        </>
-                                    )}
-                                </NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink
-                                    to="/course"
-                                    className={({ isActive }) =>
-                                        `group relative inline-block py-2 md:px-2 px-5 ${
-                                            isActive ? 'text-[#0d438d]' : 'hover:text-[#0d438d]'
-                                        }`
-                                    }
-                                    onClick={handleLinkClick}
-                                >
-                                    {({ isActive }) => (
-                                        <>
-                                            Course
-                                            <span className={`absolute bottom-0 left-0 h-[3px] bg-[var(--primary-color)] rounded-full transition-all duration-300 ${
-                                                isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                                            }`}></span>
-                                        </>
-                                    )}
-                                </NavLink>
-                            </li>
-
-                            <li>
-                                <input type="text" placeholder="Search" className="border border-2 ring-1 ring-[var(--primary-color)] outline-none rounded-sm border-[var(--primary-color )]"/>
-                            </li>
-
-                            <li className="">
-                                <NavLink
-                                    to="/login"
-                                    className={({ isActive }) =>
-                                        `group relative text-[var(--primary-color)] border border-[var(--primary-color)] rounded inline-block py-1 md:px-6 px-5 hover:shadow-lg hover:shadow-gray-400 ${
-                                            isActive ? 'text-purple-700' : ''
-                                        }`
-                                    }
-                                    onClick={handleLinkClick}
-                                >
-                                    Sign In
-                                    <span className="absolute bottom-0 left-0 w-0 rounded-full transition-all duration-300 group-hover:w-full"></span>
-                                </NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink
-                                    to="/signup"
-                                    className={({ isActive }) =>
-                                        `group relative bg-[var(--primary-color)] text-white rounded inline-block py-1 md:px-6 px-5 hover:shadow-lg hover:shadow-gray-400 ${
-                                            isActive ? 'text-green-600' : ''
-                                        }`
-                                    }
-                                    onClick={handleLinkClick}
-                                >
-                                    Sign Up
-                                    <span className="absolute bottom-0 left-0 w-0 rounded-full transition-all duration-300 group-hover:w-full"></span>
-                                </NavLink>
-                            </li>
-                        </ul>
+                    {/* Search bar */}
+                    <div className="flex items-center gap-2 border border-gray-300 rounded-full px-4 py-1.5 bg-white shadow-sm flex-1 max-w-[280px]">
+                        <Search size={15} className="text-gray-400 flex-shrink-0" />
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            className="outline-none text-sm text-gray-600 w-full bg-transparent placeholder-gray-400"
+                        />
                     </div>
                 </div>
 
-                <div className="flex items-center gap-6 md:hidden">
-                    {menuOpen ? (
-                        <X className="text-3xl cursor-pointer text-gray-800" onClick={toggleMenu} />
-                    ) : (
-                        <Menu className="text-3xl cursor-pointer text-gray-800" onClick={toggleMenu} />
-                    )}
+                {/* Right — auth buttons (desktop) */}
+                <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+                    <NavLink
+                        to="/login"
+                        className="text-sm text-[#69315E] border border-[#69315E] rounded px-5 py-1.5 hover:bg-[#69315E] hover:text-white transition"
+                    >
+                        Sign In
+                    </NavLink>
+                    <NavLink
+                        to="/signup"
+                        className="text-sm bg-[#69315E] text-white rounded px-5 py-1.5 hover:bg-[#541f4a] transition"
+                    >
+                        Sign Up
+                    </NavLink>
                 </div>
+
+                {/* Hamburger (mobile) */}
+                <button className="md:hidden text-gray-700" onClick={() => setMenuOpen(!menuOpen)}>
+                    {menuOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
             </nav>
+
+            {/* Mobile menu */}
+            {menuOpen && (
+                <div className="md:hidden fixed top-[56px] left-0 w-full bg-white shadow-lg z-[9998] px-6 py-4 flex flex-col gap-4 text-sm font-medium text-gray-700">
+                    <NavLink to="/" end onClick={() => setMenuOpen(false)} className="hover:text-[#69315E]">Dashboard</NavLink>
+                    <NavLink to="/pricing" onClick={() => setMenuOpen(false)} className="hover:text-[#69315E]">Pricing</NavLink>
+                    <NavLink to="/course" onClick={() => setMenuOpen(false)} className="hover:text-[#69315E]">Courses</NavLink>
+                    <div className="flex items-center gap-2 border border-gray-300 rounded-full px-4 py-1.5">
+                        <Search size={15} className="text-gray-400" />
+                        <input type="text" placeholder="Search..." className="outline-none text-sm w-full" />
+                    </div>
+                    <div className="flex gap-3 pt-2">
+                        <NavLink to="/login" onClick={() => setMenuOpen(false)} className="flex-1 text-center text-[#69315E] border border-[#69315E] rounded px-4 py-1.5">Sign In</NavLink>
+                        <NavLink to="/signup" onClick={() => setMenuOpen(false)} className="flex-1 text-center bg-[#69315E] text-white rounded px-4 py-1.5">Sign Up</NavLink>
+                    </div>
+                </div>
+            )}
         </header>
     );
 };

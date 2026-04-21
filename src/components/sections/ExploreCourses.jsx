@@ -1,4 +1,3 @@
-import React from 'react'
 import courseImg1 from '../../assets/img2.png';
 import courseImg2 from '../../assets/img3.png';
 import courseImg3 from '../../assets/img4.png';
@@ -18,8 +17,8 @@ export default function ExploreCourses() {
                 <p className='text-[.9rem] pl-12 mb-4 leading-[1.5]'> we promise to embark you on a transformative career journey in tech with our comprehensive courses. Acquire cutting-edge skills, open doors to innovation, and shape a thriving future in the tech industry.</p>
             </div>
 
-            <div className='grid grid-cols md:grid-cols-3 gap-6 pt-20 justify-center'>
-                <div className="p-4 border border-[#B1B4CA] rounded-lg w-80 shadow-sm">
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-12'>
+                <div className="p-4 border border-[#B1B4CA] rounded-lg w-full shadow-sm">
                     {/* Image */}
                     <img src={courseImg1} alt="Course one" className="rounded-md mb-4 w-full" />
 
@@ -82,7 +81,7 @@ export default function ExploreCourses() {
                 </div>
 
 
-                <div className="p-4 border border-[#B1B4CA] rounded-lg w-80 shadow-sm">
+                <div className="p-4 border border-[#B1B4CA] rounded-lg w-full shadow-sm">
                     {/* Image */}
                     <img src={courseImg2} alt="Course one" className="rounded-md mb-4 w-full" />
 
@@ -144,7 +143,7 @@ export default function ExploreCourses() {
                     </div>
                 </div>
 
-                <div className="p-4 border border-[#B1B4CA] rounded-lg w-80 shadow-sm">
+                <div className="p-4 border border-[#B1B4CA] rounded-lg w-full shadow-sm">
                     {/* Image */}
                     <img src={courseImg3} alt="Course one" className="rounded-md mb-4 w-full" />
 
@@ -206,7 +205,7 @@ export default function ExploreCourses() {
                     </div>
                 </div>
 
-                <div className="p-4 border border-[#B1B4CA] rounded-lg w-80 shadow-sm">
+                <div className="p-4 border border-[#B1B4CA] rounded-lg w-full shadow-sm">
                     {/* Image */}
                     <img src={courseImg4} alt="Course one" className="rounded-md mb-4 w-full" />
 
@@ -269,7 +268,7 @@ export default function ExploreCourses() {
                 </div>
 
 
-                <div className="p-4 border border-[#B1B4CA] rounded-lg w-80 shadow-sm">
+                <div className="p-4 border border-[#B1B4CA] rounded-lg w-full shadow-sm">
                     {/* Image */}
                     <img src={courseImg4} alt="Course one" className="rounded-md mb-4 w-full" />
 
@@ -332,7 +331,7 @@ export default function ExploreCourses() {
                 </div>
 
 
-                <div className="p-4 border border-[#B1B4CA] rounded-lg w-80 shadow-sm">
+                <div className="p-4 border border-[#B1B4CA] rounded-lg w-full shadow-sm">
                     {/* Image */}
                     <img src={courseImg4} alt="Course one" className="rounded-md mb-4 w-full" />
 
